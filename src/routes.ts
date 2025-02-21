@@ -1,9 +1,7 @@
 // Just drop copy this file into your app/routes.ts and happy coding!
-
+import { type RouteConfig, type RouteConfigEntry, index, layout, route } from '@react-router/dev/routes'
 import fs from 'node:fs'
 import path from 'node:path'
-
-import { type RouteConfig, type RouteConfigEntry, index, layout, route } from '@react-router/dev/routes'
 
 type RouteDefinition =
   | {
@@ -28,8 +26,12 @@ function transformSegment(routeName: string, basePath: string): string {
     // const param = routeName.slice(4, -1)
     routePath = path.join(basePath, '*')
   } else if (routeName.startsWith('[') && routeName.endsWith(']')) {
-    // Resource route
-    const param = routeName.slice(1, -1)
+    // Dynamic segment route
+    let param = routeName.slice(1, -1)
+    if (param.startsWith('[') && routeName.endsWith(']')) {
+      // Optional segment route
+      param = param.slice(1, -1) + '?'
+    }
     routePath = path.join(basePath, `:${param}`)
   } else {
     routePath = path.join(basePath, routeName)
@@ -151,12 +153,12 @@ function getRoutesTableData(routes: RouteDefinition[]): { route: string; filenam
 }
 
 function debugRoutes(routes: RouteDefinition[]) {
-  // if (import.meta.env.DEV) {
-  //// console.log(JSON.stringify(generatedRoutes, null, 2))
-  const tableData = getRoutesTableData(routes)
-  console.log('\n🚀 Route List:')
-  console.table(tableData)
-  // }
+  if (import.meta.env.DEV) {
+    // console.log(JSON.stringify(generatedRoutes, null, 2))
+    const tableData = getRoutesTableData(routes)
+    console.log('\n🚀 Route List:')
+    console.table(tableData)
+  }
 }
 
 // Generate routes from filesystem
