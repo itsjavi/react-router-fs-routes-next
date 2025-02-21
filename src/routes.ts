@@ -1,7 +1,9 @@
 // Just drop copy this file into your app/routes.ts and happy coding!
-import { type RouteConfig, type RouteConfigEntry, index, layout, route } from '@react-router/dev/routes'
+
 import fs from 'node:fs'
 import path from 'node:path'
+
+import { type RouteConfig, type RouteConfigEntry, index, layout, route } from '@react-router/dev/routes'
 
 type RouteDefinition =
   | {
