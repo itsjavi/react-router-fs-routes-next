@@ -16,7 +16,7 @@ Supports both `.ts` and `.tsx` files, depends if you use JSX inside or not.
 ## Setup
 It requires React Router v7 or compatible.
 
-This is not an NPM package, it's just a file [`src/routes,ts`](src/routes,ts) that you can copy-paste 
+This is not an NPM package, it's just a file [`src/routes.ts`](src/routes.ts) that you can copy-paste 
 in your `app/routes.ts` and customize it as you wish.
 
 Example:
