@@ -17,6 +17,8 @@ It requires React Router v7 or compatible.
 This is not an NPM package, it's just a file [`src/routes,ts`](src/routes,ts) that you can copy-paste 
 in your `app/routes.ts` and customize it as you wish.
 
+Example:
 
+![image](https://github.com/user-attachments/assets/ac3228c2-afdd-4064-8b08-579747764637)
 
 
