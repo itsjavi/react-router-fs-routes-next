@@ -10,6 +10,8 @@ Supports all route types of [the official docs](https://reactrouter.com/start/fr
 - Layout routes: `layout.tsx` at any level, inheritable.
 - Extras inspired by Next:
   - Route grouping (via parentheses): `(auth)/news.tsx` will be `/news`. Has no effect more than code organisation purposes or for sharing the same layout without requiring a nested level.
+ 
+Supports both `.ts` and `.tsx` files, depends if you use JSX inside or not.
 
 ## Setup
 It requires React Router v7 or compatible.
